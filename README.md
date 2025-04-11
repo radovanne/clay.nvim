@@ -20,9 +20,9 @@ With Clay, you can:
 `clay.nvim` brings Clay closer to your fingers — right inside Neovim.  
 This plugin adds custom functions that integrate with the Clay v2 API, making it easier to:
 
-- Start Clay sessions 🔌  
-- Evaluate code and see the output 🔁  
-- Generate hiccup and HTML 📄  
+- Start Clay sessions   
+- Evaluate code and see the output   
+- Generate hiccup and HTML   
 
 Current usage depends on [Conjure](https://github.com/Olical/conjure).
 
@@ -54,16 +54,51 @@ Current usage depends on [Conjure](https://github.com/Olical/conjure).
 
 ---
 
-##  Example Usage
+##  Function List
 
 Once you’ve configured it, try these in your Clojure files:
 
 - `clay.start()` – starts a Clay session  
-- `clay.eval_form()` – evaluates the form under the cursor  
-- `clay.eval_ns()` – evaluates the current namespace  
-- `clay.eval_ns_to_hiccup()` – turns the ns into hiccup for rendering
+- `clay.start_and_render()` – starts a Clay session, evaluates the form under the cursor and renders it as html in the browser.  
+- `clay.eval_form()` – evaluates the form under the cursor and renders it as html in the browser.  
+- `clay.eval_ns()` – evaluates the current namespace and renders it as html in the browser.  
+- `clay.eval_ns_to_hiccup()` – evaluates current namespace and prints in as a hiccup.
 
 ---
+
+
+##  Example Usage
+
+```clojure
+(ns clay
+  (:require
+   [scicloj.kindly.v4.kind :as kind]
+   [scicloj.clay.v2.main]
+   [tablecloth.api :as tc]))
+
+;; Basic math visualisation
+(+ 2 2 3)
+
+;; A Hiccup spec:
+(kind/hiccup
+ [:div {:style {:background "#efe9e6"
+                :border-style :solid}}
+  [:ul
+   [:li "one"]
+   [:li "two"]
+   [:li "three"]]])
+
+;; A dataset using Tablecloth:
+(-> {:x (range 5)
+     :y (repeatedly 5 rand)}
+    tc/dataset
+    (tc/set-dataset-name "my dataset"))
+```
+
+![image](./assets/images/clay.png)
+
+---
+Contributions are welcome!
 
 That’s it — simple, minimal, and meant to stay out of your way   
 Happy visualizing with Clay + Neovim! 
