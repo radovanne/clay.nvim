@@ -1,21 +1,21 @@
-# 🏺 clay.nvim
+#  clay.nvim
 
 **A Neovim plugin for working with [Clay](https://github.com/scicloj/clay), the minimalistic Clojure tool for data visualization and literate programming.**
 
 ---
 
-## 🌿 What is Clay?
+##  What is Clay?
 
 [Clay](https://github.com/scicloj/clay) is a minimalistic Clojure tool for **visual data exploration** and **literate programming**, designed with the [Kindly](https://scicloj.github.io/docs/kindly/) convention in mind.
 
 With Clay, you can:
-- 📊 Create visualizations from your Clojure code  
-- 📘 Turn Clojure source and comments into rich HTML documents: blog posts, slideshows, reports, and more  
-- 🧠 Explore data in a visual and expressive way
+-  Create visualizations from your Clojure code  
+-  Turn Clojure source and comments into rich HTML documents: blog posts, slideshows, reports, and more  
+-  Explore data in a visual and expressive way
 
 ---
 
-## 🎯 What is `clay.nvim`?
+##  What is `clay.nvim`?
 
 `clay.nvim` brings Clay closer to your fingers — right inside Neovim.  
 This plugin adds custom functions that integrate with the Clay v2 API, making it easier to:
@@ -50,11 +50,11 @@ Current usage depends on [Conjure](https://github.com/Olical/conjure).
 }
 ```
 
-> ✨ No keybindings are enforced — you're free to set them up however you'd like.
+>  No keybindings are enforced — you're free to set them up however you'd like.
 
 ---
 
-## 🧪 Example Usage
+##  Example Usage
 
 Once you’ve configured it, try these in your Clojure files:
 
