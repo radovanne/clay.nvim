@@ -1,4 +1,6 @@
 #  clay.nvim
+** This plugin is still Work In Progress.**
+** Changes will happen, things may break, but I will fix it. **
 
 **A Neovim plugin for working with [Clay](https://github.com/scicloj/clay), the minimalistic Clojure tool for data visualization and literate programming.**
 
