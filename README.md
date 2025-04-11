@@ -69,6 +69,16 @@ Once you’ve configured it, try these in your Clojure files:
 
 ##  Example Usage
 
+In deps.edn:
+```clojure
+{:paths ["src", "resources"]
+ :deps {org.clojure/clojure {:mvn/version "1.12.0"}
+        org.scicloj/clay {:mvn/version "2-beta39"}
+        org.scicloj/kindly {:mvn/version "4-beta15"}
+        scicloj/tablecloth {:mvn/version "7.042"}}}
+```
+
+In src/clay.clj:
 ```clojure
 (ns clay
   (:require
@@ -94,6 +104,8 @@ Once you’ve configured it, try these in your Clojure files:
     tc/dataset
     (tc/set-dataset-name "my dataset"))
 ```
+
+Run clay_start and clay_eval_ns
 
 ![image](./assets/images/clay.png)
 
