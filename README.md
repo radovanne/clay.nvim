@@ -65,5 +65,5 @@ Once you’ve configured it, try these in your Clojure files:
 
 ---
 
-That’s it — simple, minimal, and meant to stay out of your way 🕶️  
-Happy visualizing with Clay + Neovim! 🧠📊
+That’s it — simple, minimal, and meant to stay out of your way   
+Happy visualizing with Clay + Neovim! 
