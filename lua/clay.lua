@@ -57,4 +57,46 @@ M.eval_ns_to_hiccup = function()
   conj_eval("clay-eval-ns-to-hiccup", code)
 end
 
+M.make_ns_html = function()
+  local source_path = vim.fn.expand("%:p")
+  local code = string.format('(scicloj.clay.v2.api.snippets/make-ns-html! "%s" {:ide :neovim})', source_path)
+  conj_eval("make-ns-html!", code)
+end
+
+M.make_ns_quarto_html = function()
+  local source_path = vim.fn.expand("%:p")
+  local code = string.format('(scicloj.clay.v2.api.snippets/make-ns-quarto-html! "%s" {:ide :neovim})', source_path)
+  conj_eval("make-ns-quarto-html!", code)
+end
+
+M.make_ns_quarto_revealjs = function()
+  local source_path = vim.fn.expand("%:p")
+  local code = string.format('(scicloj.clay.v2.api.snippets/make-ns-quarto-revealjs! "%s" {:ide :neovim})', source_path)
+  conj_eval("make-ns-quarto-revealjs!", code)
+end
+
+M.make_form_html = function()
+  local form_content = extract.form({ root = true }).content
+  local source_path = vim.fn.expand("%:p")
+  local code = string.format('(scicloj.clay.v2.api.snippets/make-form-html! "%s" "%s" {:ide :neovim})', form_content, source_path)
+  conj_eval("make-form-html!", code)
+end
+
+M.make_form_quarto_html = function()
+  local form_content = extract.form({ root = true }).content
+  local source_path = vim.fn.expand("%:p")
+  local code = string.format('(scicloj.clay.v2.api.snippets/make-form-quarto-html! "%s" "%s" {:ide :neovim})', form_content, source_path)
+  conj_eval("make-form-quarto-html!", code)
+end
+
+M.browse = function()
+  local code = string.format('(scicloj.clay.v2.api.snippets/browse!)')
+  conj_eval("browse!", code)
+end
+
+M.watch = function()
+  local code = string.format('(scicloj.clay.v2.api.snippets/watch! {:ide :neovim})')
+  conj_eval("watch!", code)
+end
+
 return M
