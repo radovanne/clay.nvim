@@ -18,6 +18,8 @@ M.ClayPrintNamespaceToHiccup = function()
   conj_eval("clay-eval-ns-to-hiccup", code)
 end
 
+-- Require and evaluate clay.
+-- Evaluates namespace and renders it to browser.
 M.ClayMakeNamespaceHtml = function()
   local source_path = vim.fn.expand("%:p")
   local code = string.format(
@@ -45,11 +47,13 @@ M.ClayMakeNamespaceQuartoRevealjs = function()
   conj_eval("make-ns-quarto-revealjs!", code)
 end
 
+-- Require and evaluate clay.
+-- Evaluates current form and renders it to browser.
 M.ClayMakeFormHtml = function()
   local form_content = extract.form({ root = true }).content
   local source_path = vim.fn.expand("%:p")
   local code = string.format(
-    '(do (require \'[scicloj.clay.v2.snippets :as clay-snippets]) (clay-snippets/make-form-html! %s "%s" {:ide :neovim}))',
+    '(do (require \'[scicloj.clay.v2.snippets :as clay-snippets]) (clay-snippets/make-form-html! "%s" "%s" {:ide :neovim}))',
     form_content,
     source_path
   )
@@ -64,6 +68,8 @@ M.MakeFormQuartoHtml = function()
   conj_eval("make-form-quarto-html!", code)
 end
 
+-- Require and evaluate clay.
+-- Opens localhost page.
 M.ClayBrowse = function()
   local code =
     string.format("(do (clojure.core/require '[scicloj.clay.v2.snippets :as clay-snippets]) (clay-snippets/browse!))")
