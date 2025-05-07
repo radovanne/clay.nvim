@@ -19,7 +19,7 @@ M.ClayPrintNamespaceToHiccup = function()
 end
 
 -- Require and evaluate clay.
--- Evaluates namespace and renders it to browser.
+-- Evaluates current form and renders it to browser.
 M.ClayMakeNamespaceHtml = function()
   local source_path = vim.fn.expand("%:p")
   local code = string.format(
@@ -53,7 +53,7 @@ M.ClayMakeFormHtml = function()
   local form_content = extract.form({ root = true }).content
   local source_path = vim.fn.expand("%:p")
   local code = string.format(
-    '(do (require \'[scicloj.clay.v2.snippets :as clay-snippets]) (clay-snippets/make-form-html! "%s" "%s" {:ide :neovim}))',
+    '(do (require \'[scicloj.clay.v2.snippets :as clay-snippets]) (clay-snippets/make-form-html! %s "%s" {:ide :neovim}))',
     form_content,
     source_path
   )
