@@ -78,7 +78,7 @@ M.ClayMakeFormHtml = function()
   local form_content = extract.form({ root = true }).content
   local source_path = vim.fn.expand("%:p")
   local code = string.format(
-    '(do (require \'[scicloj.clay.v2.snippets :as clay-snippets]) (clay-snippets/make-form-html! "%s" "%s" {:ide :neovim}))',
+    '(do (require \'[scicloj.clay.v2.snippets :as clay-snippets]) (clay-snippets/make-form-html! %s "%s" {:ide :neovim}))',
     form_content,
     source_path
   )
@@ -97,13 +97,15 @@ M.MakeFormQuartoHtml = function()
 end
 
 M.ClayBrowse = function()
-  local code = string.format("(do (clojure.core/require '[scicloj.clay.v2.snippets :as clay-snippets]) (clay-snippets/browse!))")
+  local code =
+    string.format("(do (clojure.core/require '[scicloj.clay.v2.snippets :as clay-snippets]) (clay-snippets/browse!))")
   conj_eval("browse!", code)
 end
 
 M.ClayWatch = function()
-  local code =
-    string.format("(do (clojure.core/require '[scicloj.clay.v2.snippets :as clay-snippets]) (clay-snippets/watch! {:ide :neovim}))")
+  local code = string.format(
+    "(do (clojure.core/require '[scicloj.clay.v2.snippets :as clay-snippets]) (clay-snippets/watch! {:ide :neovim}))"
+  )
   conj_eval("watch!", code)
 end
 
