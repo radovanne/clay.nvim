@@ -58,16 +58,16 @@ Current usage depends on [Conjure](https://github.com/Olical/conjure).
 ---
 ## 📘 Function List
 
-* ClayBrowse: Open the browser to the local Clay page
-* ClayWatch: Start watching notebooks directory for Clay updates
-* ClayPrintNamespaceToHiccup: Convert namespace to hiccup without rendering
-* ClayMakeFile: Render the current namespace to HTML
-* ClayMakeFileQuarto: Render the current namespace to Quarto
-* ClayMakeFileRevealjs: Render the current namespace to RevealJS
-* ClayMakeCurrentForm: Render the current form to HTML
-* ClayMakeTopLevelForm: Render the top-level form to HTML
-* ClayMakeCurrentFormQuarto: Render current form to Quarto
-* ClayMakeTopLevelFormQuarto: Render top-level form to Quarto
+* `ClayBrowse` -> Open the browser to the local Clay page
+* `ClayWatch` -> Start watching notebooks directory for Clay updates
+* `ClayPrintNamespaceToHiccup` -> Convert namespace to hiccup without rendering
+* `ClayMakeFile` -> Render the current namespace to HTML
+* `ClayMakeFileQuarto` -> Render the current namespace to Quarto
+* `ClayMakeFileRevealjs` -> Render the current namespace to RevealJS
+* `ClayMakeCurrentForm` -> Render the current form to HTML
+* `ClayMakeTopLevelForm` -> Render the top-level form to HTML
+* `ClayMakeCurrentFormQuarto` -> Render current form to Quarto
+* `ClayMakeTopLevelFormQuarto` -> Render top-level form to Quarto
 
 ---
 ## 📦 Quarto & RevealJS Integration
@@ -77,8 +77,8 @@ You can render your forms or whole namespaces directly into beautiful documents 
 
 Use:
 
-* ClayMakeFileQuarto or ClayMakeTopLevelFormQuarto for Quarto.
-* ClayMakeFileRevealjs for RevealJS presentations.
+* `ClayMakeFileQuarto` or `ClayMakeTopLevelFormQuarto` for Quarto.
+* `ClayMakeFileRevealjs` for RevealJS presentations.
 
 ---
 
@@ -88,10 +88,10 @@ Clay works equally well in VSCode and Neovim, and clay.nvim is built to match th
 Check out the Calva (VSCode) configuration here:
 🔗 Calva Clay Config ([config.edn](https://github.com/scicloj/clay))
 
-Whether you use Neovim or VSCode, you’ll get the same workflows and same Clay integration — and I’ll try to keep it that way going forward.
+> Whether you use Neovim or VSCode, you’ll get the same workflows and same Clay integration — and I’ll try to keep it that way going forward.
 ---
 
-##  Example Usage
+## 🧪 Example Usage
 
 In deps.edn:
 ```clojure
@@ -136,5 +136,5 @@ Run the REPL, connect to it and run `:ClayBrowse` to start!
 ---
 Contributions are welcome!
 
-That’s it — simple, minimal, and meant to stay out of your way   
-Happy visualizing with Clay + Neovim! 
+That’s it — simple, minimal, and meant to stay out of your way.
+Happy visualizing with Clay + Neovim! 🎨
