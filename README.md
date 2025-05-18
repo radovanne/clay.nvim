@@ -42,11 +42,12 @@ Current usage depends on [Conjure](https://github.com/Olical/conjure).
     local wk = require("which-key")
     wk.add({
       { "<localleader>c", group = "Connect/Clay" },
-      { "<localleader>cs", clay.start, desc = "Clay start" },
-      { "<localleader>cS", clay.start_and_render, desc = "Clay start and render" },
-      { "<localleader>cef", clay.eval_form, desc = "Clay eval form" },
-      { "<localleader>cen", clay.eval_ns, desc = "Clay eval ns" },
-      { "<localleader>ceh", clay.eval_ns_to_hiccup, desc = "Clay eval ns to hiccup" },
+      { "<localleader>cb", clay.ClayBrowse, desc = "Clay Browse" },
+      { "<localleader>cw", clay.ClayWatch, desc = "Clay Watch" },
+      { "<localleader>ch", clay.ClayPrintNamespaceToHiccup, desc = "Print Namespace to Hiccup" },
+      { "<localleader>cn", clay.ClayMakeFile, desc = "Render Namespace" },
+      { "<localleader>cqn", clay.ClayMakeFileQuarto, desc = "Render Namespace with Quarto" },
+      ...etc
     })
   end,
 }
@@ -55,19 +56,40 @@ Current usage depends on [Conjure](https://github.com/Olical/conjure).
 >  No keybindings are enforced — you're free to set them up however you'd like.
 
 ---
+## 📘 Function List
 
-##  Function List
+* ClayBrowse: Open the browser to the local Clay page
+* ClayWatch: Start watching notebooks directory for Clay updates
+* ClayPrintNamespaceToHiccup: Convert namespace to hiccup without rendering
+* ClayMakeFile: Render the current namespace to HTML
+* ClayMakeFileQuarto: Render the current namespace to Quarto
+* ClayMakeFileRevealjs: Render the current namespace to RevealJS
+* ClayMakeCurrentForm: Render the current form to HTML
+* ClayMakeTopLevelForm: Render the top-level form to HTML
+* ClayMakeCurrentFormQuarto: Render current form to Quarto
+* ClayMakeTopLevelFormQuarto: Render top-level form to Quarto
 
-Once you’ve configured it, try these in your Clojure files:
+---
+## 📦 Quarto & RevealJS Integration
 
-- `clay.start()` – starts a Clay session  
-- `clay.start_and_render()` – starts a Clay session, evaluates the form under the cursor and renders it as html in the browser.  
-- `clay.eval_form()` – evaluates the form under the cursor and renders it as html in the browser.  
-- `clay.eval_ns()` – evaluates the current namespace and renders it as html in the browser.  
-- `clay.eval_ns_to_hiccup()` – evaluates current namespace and prints in as a hiccup.
+`clay.nvim` supports both Quarto and RevealJS outputs.
+You can render your forms or whole namespaces directly into beautiful documents and slides!
+
+Use:
+
+* ClayMakeFileQuarto or ClayMakeTopLevelFormQuarto for Quarto.
+* ClayMakeFileRevealjs for RevealJS presentations.
 
 ---
 
+## 🧩 VSCode & Neovim Parity
+Clay works equally well in VSCode and Neovim, and clay.nvim is built to match the VSCode experience closely.
+
+Check out the Calva (VSCode) configuration here:
+🔗 Calva Clay Config ([config.edn](https://github.com/scicloj/clay))
+
+Whether you use Neovim or VSCode, you’ll get the same workflows and same Clay integration — and I’ll try to keep it that way going forward.
+---
 
 ##  Example Usage
 
@@ -107,7 +129,7 @@ In src/clay.clj:
     (tc/set-dataset-name "my dataset"))
 ```
 
-Run clay_start and clay_eval_ns
+Run the REPL, connect to it and run `:ClayBrowse` to start!
 
 ![image](./assets/images/clay.png)
 
