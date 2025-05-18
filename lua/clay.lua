@@ -65,9 +65,9 @@ M.ClayMakeFileRevealjs = function()
 end
 
 -- Require and evaluate clay.
--- Evaluates top level form and renders it to browser.
+-- Evaluates current level form and renders it to browser.
 M.ClayMakeCurrentForm = function()
-  local form_content = safe_get_form({ ["root?"] = true })
+  local form_content = safe_get_form({})
   if not form_content then
     vim.notify("Could not extract form", vim.log.levels.ERROR)
     return
