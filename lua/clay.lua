@@ -67,7 +67,7 @@ end
 -- Require and evaluate clay.
 -- Evaluates top level form and renders it to browser.
 M.ClayMakeCurrentForm = function()
-  local form_content = safe_get_form({ root = true })
+  local form_content = safe_get_form({ ["root?"] = true })
   if not form_content then
     vim.notify("Could not extract form", vim.log.levels.ERROR)
     return
@@ -80,7 +80,7 @@ end
 -- Require and evaluate clay.
 -- Evaluates top level form and renders it to browser.
 M.ClayMakeTopLevelForm = function()
-  local form_content = safe_get_form({ root = true })
+  local form_content = safe_get_form({ ["root?"] = true })
   if not form_content then
     vim.notify("Could not extract form", vim.log.levels.ERROR)
     return
@@ -104,7 +104,7 @@ end
 
 
 M.ClayMakeTopLevelFormQuarto = function()
-  local form_content = safe_get_form({ root = true })
+  local form_content = safe_get_form({ ["root?"] = true })
   if not form_content then
     vim.notify("Could not extract form", vim.log.levels.ERROR)
     return
