@@ -47,7 +47,8 @@ end
 -- Require and evaluate clay.
 -- Evaluates current form and renders it to browser.
 M.ClayMakeFile = function()
-  local code = require_wrapper(string.format("(scicloj.clay.v2.snippets/make-ns-html! \"%s\" {:ide :neovim})"))
+  local code = require_wrapper(string.format("(scicloj.clay.v2.snippets/make-ns-html! \"%s\" {:ide :neovim})",
+    get_source_path()))
   try_conj_eval("make-ns-html!", code)
 end
 
