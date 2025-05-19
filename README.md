@@ -58,16 +58,16 @@ Current usage depends on [Conjure](https://github.com/Olical/conjure).
 ---
 ## 📘 Function List
 
-* `ClayBrowse` -> Open the browser to the local Clay page
-* `ClayWatch` -> Start watching notebooks directory for Clay updates
-* `ClayPrintNamespaceToHiccup` -> Convert namespace to hiccup without rendering
-* `ClayMakeFile` -> Render the current namespace to HTML
-* `ClayMakeFileQuarto` -> Render the current namespace to Quarto
-* `ClayMakeFileRevealjs` -> Render the current namespace to RevealJS
-* `ClayMakeCurrentForm` -> Render the current form to HTML
-* `ClayMakeTopLevelForm` -> Render the top-level form to HTML
-* `ClayMakeCurrentFormQuarto` -> Render current form to Quarto
-* `ClayMakeTopLevelFormQuarto` -> Render top-level form to Quarto
+* `ClayBrowse` →  Open the browser to the local Clay page
+* `ClayWatch` →  Start watching notebooks directory for Clay updates
+* `ClayPrintNamespaceToHiccup` →  Convert namespace to hiccup without rendering
+* `ClayMakeFile` →  Render the current namespace to HTML
+* `ClayMakeFileQuarto` →  Render the current namespace to Quarto
+* `ClayMakeFileRevealjs` →  Render the current namespace to RevealJS
+* `ClayMakeCurrentForm` →  Render the current form to HTML
+* `ClayMakeTopLevelForm` →  Render the top-level form to HTML
+* `ClayMakeCurrentFormQuarto` →  Render current form to Quarto
+* `ClayMakeTopLevelFormQuarto` →  Render top-level form to Quarto
 
 ---
 ## 📦 Quarto & RevealJS Integration
